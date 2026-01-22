@@ -1,0 +1,113 @@
+{
+  "templateId": "attack-report-v1",
+  "name": "红队攻击报告模板",
+  "type": "attack",
+  "version": "1.0",
+  "sections": [
+    {
+      "id": "basic",
+      "title": "基础信息",
+      "fields": [
+        {
+          "key": "teamName",
+          "label": "红队名称",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "targetName",
+          "label": "攻击目标",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "attackTime",
+          "label": "攻击时间",
+          "type": "datetime",
+          "required": true
+        },
+        {
+          "key": "recordingTimeRange",
+          "label": "录屏时间范围",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "attack-path",
+      "title": "攻击路径与方法",
+      "fields": [
+        {
+          "key": "attackMethod",
+          "label": "攻击工具/方法",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "entryPoint",
+          "label": "入侵点",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "exploitChain",
+          "label": "利用链",
+          "type": "richtext",
+          "required": false
+        },
+        {
+          "key": "finalObjective",
+          "label": "最终目标",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "证明材料",
+      "fields": [
+        {
+          "key": "screenshots",
+          "label": "截图证据",
+          "type": "images",
+          "required": true
+        },
+        {
+          "key": "videos",
+          "label": "录屏视频",
+          "type": "videos",
+          "required": false
+        },
+        {
+          "key": "logs",
+          "label": "日志文件",
+          "type": "files",
+          "required": false
+        },
+        {
+          "key": "description",
+          "label": "详细描述",
+          "type": "richtext",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "bigscreenDisplay": {
+    "layout": "card",
+    "showFields": [
+      "teamName",
+      "targetName",
+      "attackMethod",
+      "screenshots",
+      "videos"
+    ],
+    "cardTemplate": {
+      "header": "{teamName} 攻击 {targetName}",
+      "body": "方法: {attackMethod}",
+      "footer": "提交时间: {attackTime}"
+    }
+  }
+}

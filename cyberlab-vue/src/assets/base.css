@@ -1,0 +1,193 @@
+/* Apple Design System Color Palette */
+:root {
+  /* Apple System Colors - Light Mode */
+  --apple-blue: #007AFF;
+  --apple-blue-light: #5AC8FA;
+  --apple-blue-dark: #0051D5;
+  --apple-green: #34C759;
+  --apple-green-light: #30D158;
+  --apple-indigo: #5856D6;
+  --apple-orange: #FF9500;
+  --apple-pink: #FF2D92;
+  --apple-purple: #AF52DE;
+  --apple-red: #FF3B30;
+  --apple-red-light: #FF453A;
+  --apple-teal: #5AC8FA;
+  --apple-yellow: #FFCC00;
+
+  /* Apple Gray Scale */
+  --apple-gray-1: #8E8E93;
+  --apple-gray-2: #AEAEB2;
+  --apple-gray-3: #C7C7CC;
+  --apple-gray-4: #D1D1D6;
+  --apple-gray-5: #E5E5EA;
+  --apple-gray-6: #F2F2F7;
+
+  /* Apple System Background Colors */
+  --apple-bg-primary: #FFFFFF;
+  --apple-bg-secondary: #F2F2F7;
+  --apple-bg-tertiary: #FFFFFF;
+  --apple-bg-grouped-primary: #F2F2F7;
+  --apple-bg-grouped-secondary: #FFFFFF;
+  --apple-bg-grouped-tertiary: #F2F2F7;
+
+  /* Apple Text Colors */
+  --apple-text-primary: #000000;
+  --apple-text-secondary: #3C3C43;
+  --apple-text-tertiary: #3C3C4399;
+  --apple-text-quaternary: #3C3C434D;
+
+  /* Apple Separator Colors */
+  --apple-separator-opaque: #C6C6C8;
+  --apple-separator-non-opaque: #3C3C4349;
+
+  /* Apple Fill Colors */
+  --apple-fill-primary: #78788033;
+  --apple-fill-secondary: #78788028;
+  --apple-fill-tertiary: #7676801E;
+  --apple-fill-quaternary: #74748014;
+
+  /* Apple Shadow and Blur */
+  --apple-shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --apple-shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --apple-shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --apple-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+  /* Apple Border Radius */
+  --apple-radius-small: 6px;
+  --apple-radius-medium: 8px;
+  --apple-radius-large: 12px;
+  --apple-radius-xl: 16px;
+  --apple-radius-2xl: 20px;
+
+  /* Apple Typography */
+  --apple-font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  --apple-font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+  /* Apple Spacing Scale */
+  --apple-space-1: 4px;
+  --apple-space-2: 8px;
+  --apple-space-3: 12px;
+  --apple-space-4: 16px;
+  --apple-space-5: 20px;
+  --apple-space-6: 24px;
+  --apple-space-8: 32px;
+  --apple-space-10: 40px;
+  --apple-space-12: 48px;
+  --apple-space-16: 64px;
+  --apple-space-20: 80px;
+
+  /* Apple Animation Curves */
+  --apple-ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --apple-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --apple-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Apple System Colors - Dark Mode */
+    --apple-blue: #0A84FF;
+    --apple-blue-light: #64D2FF;
+    --apple-blue-dark: #0040DD;
+    --apple-green: #30D158;
+    --apple-green-light: #32D74B;
+    --apple-indigo: #5E5CE6;
+    --apple-orange: #FF9F0A;
+    --apple-pink: #FF375F;
+    --apple-purple: #BF5AF2;
+    --apple-red: #FF453A;
+    --apple-red-light: #FF6961;
+    --apple-teal: #64D2FF;
+    --apple-yellow: #FFD60A;
+
+    /* Apple Gray Scale - Dark Mode */
+    --apple-gray-1: #8E8E93;
+    --apple-gray-2: #636366;
+    --apple-gray-3: #48484A;
+    --apple-gray-4: #3A3A3C;
+    --apple-gray-5: #2C2C2E;
+    --apple-gray-6: #1C1C1E;
+
+    /* Apple System Background Colors - Dark Mode */
+    --apple-bg-primary: #000000;
+    --apple-bg-secondary: #1C1C1E;
+    --apple-bg-tertiary: #2C2C2E;
+    --apple-bg-grouped-primary: #000000;
+    --apple-bg-grouped-secondary: #1C1C1E;
+    --apple-bg-grouped-tertiary: #2C2C2E;
+
+    /* Apple Text Colors - Dark Mode */
+    --apple-text-primary: #FFFFFF;
+    --apple-text-secondary: #EBEBF5;
+    --apple-text-tertiary: #EBEBF599;
+    --apple-text-quaternary: #EBEBF54D;
+
+    /* Apple Separator Colors - Dark Mode */
+    --apple-separator-opaque: #38383A;
+    --apple-separator-non-opaque: #54545899;
+
+    /* Apple Fill Colors - Dark Mode */
+    --apple-fill-primary: #78788033;
+    --apple-fill-secondary: #78788028;
+    --apple-fill-tertiary: #7676801E;
+    --apple-fill-quaternary: #74748014;
+  }
+}
+
+/* Semantic Variables for Project */
+:root {
+  --color-background: var(--apple-bg-primary);
+  --color-background-soft: var(--apple-bg-secondary);
+  --color-background-mute: var(--apple-bg-tertiary);
+  --color-background-grouped: var(--apple-bg-grouped-primary);
+
+  --color-border: var(--apple-separator-non-opaque);
+  --color-border-hover: var(--apple-separator-opaque);
+
+  --color-heading: var(--apple-text-primary);
+  --color-text: var(--apple-text-secondary);
+  --color-text-muted: var(--apple-text-tertiary);
+
+  --color-primary: var(--apple-blue);
+  --color-success: var(--apple-green);
+  --color-warning: var(--apple-orange);
+  --color-danger: var(--apple-red);
+
+  --section-gap: 80px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

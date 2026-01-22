@@ -1,0 +1,112 @@
+{
+  "templateId": "defense-report-v1",
+  "name": "蓝队防守报告模板",
+  "type": "defense",
+  "version": "1.0",
+  "sections": [
+    {
+      "id": "basic",
+      "title": "基础信息",
+      "fields": [
+        {
+          "key": "teamName",
+          "label": "蓝队名称",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "protectedAssets",
+          "label": "防护资产",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "defenseTime",
+          "label": "防守时间",
+          "type": "datetime",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "defense-measures",
+      "title": "防守措施",
+      "fields": [
+        {
+          "key": "detectionMethods",
+          "label": "检测方法",
+          "type": "richtext",
+          "required": true
+        },
+        {
+          "key": "preventionMeasures",
+          "label": "防御措施",
+          "type": "richtext",
+          "required": true
+        },
+        {
+          "key": "responseActions",
+          "label": "响应动作",
+          "type": "richtext",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "incidents",
+      "title": "事件记录",
+      "fields": [
+        {
+          "key": "detectedAttacks",
+          "label": "检测到的攻击",
+          "type": "richtext",
+          "required": true
+        },
+        {
+          "key": "blockedAttempts",
+          "label": "阻止的攻击尝试",
+          "type": "number",
+          "required": false
+        },
+        {
+          "key": "incidentLogs",
+          "label": "事件日志",
+          "type": "files",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "recommendations",
+      "title": "加固建议",
+      "fields": [
+        {
+          "key": "vulnerabilities",
+          "label": "发现的脆弱点",
+          "type": "richtext",
+          "required": false
+        },
+        {
+          "key": "improvements",
+          "label": "改进建议",
+          "type": "richtext",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "bigscreenDisplay": {
+    "layout": "card",
+    "showFields": [
+      "teamName",
+      "protectedAssets",
+      "detectedAttacks",
+      "blockedAttempts"
+    ],
+    "cardTemplate": {
+      "header": "{teamName} 防守报告",
+      "body": "防护资产: {protectedAssets}\n阻止攻击: {blockedAttempts}次",
+      "footer": "提交时间: {defenseTime}"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+# ============================================
+# CyberLab 后端 .dockerignore
+# 排除不需要复制到Docker镜像的文件
+# ============================================
+
+# Maven构建产物
+target/
+!target/cyberlab-0.0.1-SNAPSHOT.jar
+
+# IDE配置
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# 日志文件
+logs/
+*.log
+gc.log
+*.hprof
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS文件
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# 文档
+README.md
+docs/
+
+# 上传文件（通过volume挂载）
+uploads/
+
+# 环境变量文件
+.env
+.env.*
+
+# 测试文件
+src/test/
+
+# Docker相关
+Dockerfile
+.dockerignore
+docker-compose*.yml

@@ -1,0 +1,69 @@
+# ============================================
+# CyberLab 前端 .dockerignore
+# 排除不需要复制到Docker镜像的文件
+# ============================================
+
+# 依赖目录
+node_modules/
+bower_components/
+
+# 构建产物（由Dockerfile构建）
+dist/
+build/
+
+# IDE配置
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS文件
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# 环境变量文件
+.env
+.env.*
+!.env.example
+
+# 日志文件
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 测试文件
+tests/
+coverage/
+.nyc_output/
+
+# 文档
+README.md
+docs/
+
+# Docker相关
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.bak
+
+# 缓存
+.cache/
+.parcel-cache/
+.vite/
+
+# 其他
+*.map

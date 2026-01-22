@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.10.xsd">
+
+    <!-- 默认缓存配置 -->
+    <cache-template name="default">
+        <expiry>
+            <ttl unit="minutes">30</ttl>
+        </expiry>
+        <heap unit="entries">200</heap>
+    </cache-template>
+
+    <!-- SystemLog 系统日志缓存（读多写多，缓存时间短） -->
+    <cache alias="org.cyberlab.entity.SystemLog">
+        <expiry>
+            <ttl unit="minutes">10</ttl>
+        </expiry>
+        <heap unit="entries">1000</heap>
+    </cache>
+
+    <!-- Asset 资产缓存（读多写少，缓存时间长） -->
+    <cache alias="org.cyberlab.entity.Asset">
+        <expiry>
+            <ttl unit="minutes">60</ttl>
+        </expiry>
+        <heap unit="entries">500</heap>
+    </cache>
+
+    <!-- User 用户缓存（读多写少，缓存时间长） -->
+    <cache alias="org.cyberlab.entity.User">
+        <expiry>
+            <ttl unit="minutes">60</ttl>
+        </expiry>
+        <heap unit="entries">200</heap>
+    </cache>
+
+    <!-- ContainerState 容器状态缓存（更新频繁，缓存时间短） -->
+    <cache alias="org.cyberlab.entity.ContainerState">
+        <expiry>
+            <ttl unit="minutes">5</ttl>
+        </expiry>
+        <heap unit="entries">300</heap>
+    </cache>
+
+    <!-- DrillContainer 演练容器缓存（读多写少） -->
+    <cache alias="org.cyberlab.entity.DrillContainer">
+        <expiry>
+            <ttl unit="minutes">30</ttl>
+        </expiry>
+        <heap unit="entries">300</heap>
+    </cache>
+
+    <!-- HostNode 主机节点缓存（读多写少，缓存时间长） -->
+    <cache alias="org.cyberlab.entity.HostNode">
+        <expiry>
+            <ttl unit="minutes">60</ttl>
+        </expiry>
+        <heap unit="entries">50</heap>
+    </cache>
+
+    <!-- ScenarioTemplate 场景模板缓存（读多写极少） -->
+    <cache alias="org.cyberlab.entity.ScenarioTemplate">
+        <expiry>
+            <ttl unit="minutes">120</ttl>
+        </expiry>
+        <heap unit="entries">100</heap>
+    </cache>
+
+    <!-- Achievement 成就缓存（读多写少） -->
+    <cache alias="org.cyberlab.entity.Achievement">
+        <expiry>
+            <ttl unit="minutes">30</ttl>
+        </expiry>
+        <heap unit="entries">500</heap>
+    </cache>
+
+    <!-- 查询缓存（用于常见查询结果缓存） -->
+    <cache alias="default-query-results-region">
+        <expiry>
+            <ttl unit="minutes">10</ttl>
+        </expiry>
+        <heap unit="entries">500</heap>
+    </cache>
+
+    <!-- 更新时间戳缓存（用于跟踪实体更新时间） -->
+    <cache alias="default-update-timestamps-region">
+        <expiry>
+            <none/>
+        </expiry>
+        <heap unit="entries">5000</heap>
+    </cache>
+
+</config>

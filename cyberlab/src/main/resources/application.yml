@@ -1,0 +1,153 @@
+spring:
+  # 启用延迟初始化,减少启动时类加载和Metaspace使用
+  main:
+    lazy-initialization: true
+    banner-mode: off  # 关闭启动Banner
+
+  # 禁用默认用户认证自动配置（项目使用JWT认证，不需要默认用户）
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/cyberlab?useSSL=false&serverTimezone=UTC&characterEncoding=utf8&allowPublicKeyRetrieval=true}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:sunbuyang123}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # HikariCP连接池优化配置 - P1性能优化
+    hikari:
+      maximum-pool-size: 50           # P1优化：支持高并发访问
+      minimum-idle: 10                # 保持更多空闲连接以快速响应
+      connection-timeout: 30000       # 连接超时30秒
+      idle-timeout: 600000            # 空闲连接超时10分钟
+      max-lifetime: 1800000           # 连接最大生命周期30分钟
+      leak-detection-threshold: 60000 # 连接泄漏检测60秒
+      pool-name: CyberLabHikariPool   # 连接池命名便于监控
+
+  # Flyway数据库迁移配置
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    encoding: UTF-8
+    validate-on-migrate: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false  # 生产环境关闭SQL日志(性能优化后已修复N+1查询问题)
+    open-in-view: false  # 关闭Open-in-View警告
+    properties:
+      hibernate:
+        # 缓存策略：自动创建缺失的缓存区域，消除启动警告
+        javax.cache.missing_cache_strategy: create
+        # 优化SQL查询和批处理
+        jdbc:
+          batch_size: 25
+          batch_versioned_data: true
+          fetch_size: 50  # 控制查询结果集大小
+        order_inserts: true
+        order_updates: true
+        # 启用二级缓存来减少数据库查询
+        cache:
+          use_second_level_cache: true
+          use_query_cache: true
+          region:
+            factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+        # 连接池释放模式
+        connection:
+          release_mode: auto
+        # 关闭统计信息，减少内存消耗
+        generate_statistics: false
+        # 生产环境关闭SQL格式化
+        format_sql: false
+        use_sql_comments: false
+        # 查询优化配置
+        max_fetch_depth: 3
+        default_batch_fetch_size: 16
+        # 内存优化
+        jdbc.use_streams_for_binary: true
+        jdbc.use_get_generated_keys: true
+
+  # 文件上传配置（合并到spring配置中）
+  servlet:
+    multipart:
+      max-file-size: 1GB       # 支持大视频文件（录屏）
+      max-request-size: 1GB
+      enabled: true
+
+  # Redis配置（分布式缓存）
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+      password: ${SPRING_DATA_REDIS_PASSWORD:}
+      database: 0
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 2
+          max-wait: 3000ms
+        shutdown-timeout: 100ms
+
+server:
+  port: ${SERVER_PORT:8443}
+  ssl:
+    enabled: true
+    key-store: ${KEYSTORE_PATH:classpath:keystore.p12}
+    key-store-password: ${KEYSTORE_PASSWORD:changeit}
+    key-store-type: PKCS12
+    key-alias: localhost
+
+# CyberLab 自定义配置
+cyberlab:
+  docker:
+    # 是否启用Docker功能
+    enabled: true
+    # Docker命令超时时间（秒）
+    command-timeout: 30
+    # Docker socket路径（Linux/Mac本地）
+    socket-path: /var/run/docker.sock
+    # Docker主机地址 - 配置为VM环境
+    host: 172.16.190.130
+    # Docker API端口
+    port: 2375
+    # 是否使用TLS
+    tls-enabled: false
+    # 是否使用远程Docker（true时使用host:port，false时使用本地命令）
+    remote-enabled: true
+    # 允许操作的容器名称前缀（安全限制）
+    allowed-container-prefixes:
+      - cyberlab-
+      - drill-
+      - vuln-
+      - mysql-
+      - redis-
+      - nginx-
+      - tomcat-
+      - apache-
+      - kali-
+      - metasploit-
+
+# 文件上传路径配置
+file:
+  upload:
+    # 使用绝对路径避免临时目录问题
+    # Docker环境使用FILE_UPLOAD_PATH环境变量，本地使用项目根目录
+    path: ${FILE_UPLOAD_PATH:${user.dir}/uploads}
+
+# 日志配置 - 生产环境(性能优化完成)
+logging:
+  level:
+    root: WARN                                    # 全局WARN
+    org.cyberlab: WARN                            # 应用层WARN
+    org.springframework: WARN                     # Spring框架WARN
+    org.hibernate.SQL: WARN                       # 生产环境关闭SQL日志(已修复N+1查询)
+    org.hibernate.type.descriptor.sql: WARN      # 关闭SQL参数绑定日志
+    com.zaxxer.hikari: WARN                       # 关闭连接池诊断日志(已优化配置)
+    com.zaxxer.hikari.pool.HikariPool: WARN      # 关闭连接池详细信息
+    org.flywaydb: INFO                            # Flyway迁移信息
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n'
