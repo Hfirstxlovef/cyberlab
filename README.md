@@ -9,6 +9,9 @@
 
 ## 项目简介
 
+<img width="3024" height="1656" alt="网站首页" src="https://github.com/user-attachments/assets/c8766a27-a40c-42f9-97c5-91c41d1bdc04" />
+
+
 红岸网络空间安全对抗平台是一个专为网络安全教学和攻防演练设计的综合性实训平台，支持红蓝对抗、CTF竞赛、漏洞演练等多种场景。系统采用前后端分离架构，集成 Docker 容器化技术，提供隔离的安全演练环境。
 
 ## 核心功能
@@ -399,3 +402,30 @@ cyberlab:
 ---
 
 ⭐ 如果这个项目对你的学习有帮助，请给我们一个 Star！
+
+产品截图
+admin用户
+<img width="3024" height="1656" alt="admin仪表盘驾驶舱" src="https://github.com/user-attachments/assets/5b480871-2d75-4f03-b35c-6bba902b848a" />
+<img width="3024" height="1656" alt="admin大屏幕" src="https://github.com/user-attachments/assets/76f02ce8-50dd-4020-91dc-87c81fd73f22" />
+<img width="3024" height="1656" alt="admin安全演练中心" src="https://github.com/user-attachments/assets/24b6c5cc-6325-47cb-bc78-89389e4e82c0" />
+<img width="3024" height="1656" alt="admin系统配置" src="https://github.com/user-attachments/assets/33f272e0-6d5f-4d90-bb71-65e708978ce0" />
+
+<img width="3024" height="1656" alt="admin拓扑图" src="https://github.com/user-attachments/assets/eb27c72e-d2ca-4201-9697-49acbc3a8a40" />
+
+裁判
+<img width="3024" height="1656" alt="裁判驾驶舱" src="https://github.com/user-attachments/assets/d6523b74-2cd0-4128-bdaf-599185df0ed9" />
+<img width="3024" height="1656" alt="裁判大屏幕" src="https://github.com/user-attachments/assets/37972345-cf3b-4646-b9a1-3f5f42db2d77" />
+<img width="3024" height="1656" alt="裁判成果管理" src="https://github.com/user-attachments/assets/b6023fb1-91b4-42ac-8299-969e73709f69" />
+<img width="3024" height="1656" alt="裁判数据分析" src="https://github.com/user-attachments/assets/9d219546-5c68-43b0-92aa-45b0aa37556d" />
+
+红队
+<img width="3024" height="1656" alt="红队驾驶舱" src="https://github.com/user-attachments/assets/90787500-32cb-431b-9edd-a0772643ea71" />
+<img width="3024" height="1656" alt="红队大屏幕" src="https://github.com/user-attachments/assets/38334de7-0509-49c1-b06f-0fa2e4bcb603" />
+<img width="3024" height="1656" alt="红队攻击目标" src="https://github.com/user-attachments/assets/7fe45d32-57dd-454c-a77f-a81155f99604" />
+<img width="3024" height="1656" alt="红队录屏" src="https://github.com/user-attachments/assets/f93822f6-291a-4bb8-a2fa-0aa2d624eae0" />
+<img width="3024" height="1656" alt="红队战队1" src="https://github.com/user-attachments/assets/76f48a89-e8e2-4c99-ab19-9e0dabd64b54" />
+
+蓝队
+<img width="3024" height="1656" alt="蓝队驾驶舱" src="https://github.com/user-attachments/assets/11e48cd8-8581-4a98-af67-0cbc2ac7e6b2" />
+<img width="3024" height="1656" alt="蓝队大屏幕" src="https://github.com/user-attachments/assets/1d9eac3e-1a7f-493e-9a49-af1a319a67a5" />
+<img width="3024" height="1656" alt="蓝队战队" src="https://github.com/user-attachments/assets/e0efeaef-e4cf-4e1a-b9f9-9f0baded49b0" />
