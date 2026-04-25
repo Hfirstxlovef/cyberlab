@@ -56,7 +56,6 @@ ehthumbs.db
 !cyberlab/src/main/resources/db/**/*.sql
 # 例外：保留初始化脚本，让新用户能直接 source 建库
 !cyberlab.sql
-!cyberlab/database_indexes.sql
 
 # Backups (运行时产生的备份目录/压缩包，不影响代码里的 Backup* 类)
 cyberlab/backups/

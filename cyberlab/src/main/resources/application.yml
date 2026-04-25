@@ -28,9 +28,11 @@ spring:
   flyway:
     enabled: true
     baseline-on-migrate: true
+    baseline-version: 0
     locations: classpath:db/migration
     encoding: UTF-8
-    validate-on-migrate: true
+    validate-on-migrate: false
+    out-of-order: false
 
   jpa:
     hibernate:
