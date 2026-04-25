@@ -34,12 +34,18 @@ cyberlab-vue/server/data/
 *.p12
 *.key
 *.crt
+# 例外：保留开发用 HTTPS 证书，方便新用户开箱即用
+!cyberlab/src/main/resources/keystore.p12
+!cyberlab-vue/localhost+2.pem
+!cyberlab-vue/localhost+2-key.pem
 
 # Logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+cyberlab/logs/*
+!cyberlab/logs/.gitkeep
 
 # OS
 Thumbs.db
@@ -48,10 +54,15 @@ ehthumbs.db
 # Database
 *.sql
 !cyberlab/src/main/resources/db/**/*.sql
+# 例外：保留初始化脚本，让新用户能直接 source 建库
+!cyberlab.sql
+!cyberlab/database_indexes.sql
 
-# Backups
-*backup*
-*_backup_*
+# Backups (运行时产生的备份目录/压缩包，不影响代码里的 Backup* 类)
+cyberlab/backups/
+cyberlab-vue/server/data/backups/
+backup_*.zip
+backup_*.tar.gz
 *.bak
 
 # Temporary
